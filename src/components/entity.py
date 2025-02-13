@@ -3,4 +3,6 @@ class Entity_t:
     def __init__(self):
         self.ent_ID = self.Base_ID
         Entity_t.Base_ID += 1
-
+    
+    def getEntityID(self):
+        return self.ent_ID

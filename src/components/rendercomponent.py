@@ -12,3 +12,6 @@ class RenderComponent_t(Compoment_t):
             self.b, self.g, self.r, self.a = cv2.split(self.png_image)
             self.alpha = self.a / 255.0
         self.entityID = eID
+
+    def getEntityID(self):
+        return self.entityID

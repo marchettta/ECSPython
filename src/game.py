@@ -1,6 +1,15 @@
 import cv2
 import numpy as np
 
+from .manager.entitymanager import EntityManager_t
+
+EM = EntityManager_t()
+player = EM.createEntity()
+player_phy = EM.addEntityPhysicsComponent(player, 100, 200, 0, 0)
+player_ren = EM.addEntityRenderComponent(player, "assets/personaje.png")
+
+
+"""
 window_width = 480
 window_height = 360
 
@@ -37,3 +46,5 @@ while cv2.waitKey(1) != ord('q'):
     pass
 
 cv2.destroyAllWindows()
+
+"""

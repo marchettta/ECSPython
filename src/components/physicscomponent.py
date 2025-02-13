@@ -7,3 +7,6 @@ class PhysicsComponent_t(Compoment_t):
         self.vx = vx
         self.vy = vy
         self.entityID = eID
+
+    def getEntityID(self):
+        return self.entityID
