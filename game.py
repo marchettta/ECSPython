@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 from src.manager.entitymanager import EntityManager_t
 from src.systems.rendersystem import RenderSystem_t
 
@@ -11,10 +12,12 @@ player_ren = EM.addEntityRenderComponent(player, "assets/personaje.png")
 
 REN = RenderSystem_t(480, 360)
 
-while(True):
+while cv2.waitKey(1) != ord('q'):
     REN.update(EM)
 
-"""
+cv2.destroyAllWindows()
+
+'''
 window_width = 480
 window_height = 360
 
@@ -22,7 +25,7 @@ window = np.zeros( (window_height, window_width, 3), dtype=np.uint8)
 window_name = "Game"
 
 cv2.namedWindow(window_name)
-
+cv2.imshow(window_name, window)
 
 png_image_path = "assets/personaje.png"
 png_image = cv2.imread(png_image_path, cv2.IMREAD_UNCHANGED)
@@ -51,5 +54,4 @@ while cv2.waitKey(1) != ord('q'):
     pass
 
 cv2.destroyAllWindows()
-
-"""
+'''

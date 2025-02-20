@@ -8,6 +8,7 @@ class RenderComponent_t(Compoment_t):
             print("Error: Imagen no encontrada")
             exit()
         self.height, self.width = self.png_image.shape[:2]
+
         if self.png_image.shape[2] == 4:
             self.b, self.g, self.r, self.a = cv2.split(self.png_image)
             self.alpha = self.a / 255.0
