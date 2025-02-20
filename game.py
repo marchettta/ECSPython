@@ -1,13 +1,18 @@
 import cv2
 import numpy as np
 
-from .manager.entitymanager import EntityManager_t
+from src.manager.entitymanager import EntityManager_t
+from src.systems.rendersystem import RenderSystem_t
 
 EM = EntityManager_t()
 player = EM.createEntity()
 player_phy = EM.addEntityPhysicsComponent(player, 100, 200, 0, 0)
 player_ren = EM.addEntityRenderComponent(player, "assets/personaje.png")
 
+REN = RenderSystem_t(480, 360)
+
+while(True):
+    REN.update(EM)
 
 """
 window_width = 480
